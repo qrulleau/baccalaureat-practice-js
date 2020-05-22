@@ -1,0 +1,17 @@
+liste des fonctionnalités requise :
+
+choisir un timer pour definir la durée de la session
+
+mise en place d'un bouton qui va créer une session
+
+choisir une liste de domaine qui seront pris en compte lors du jeu
+
+verifier que la réponse corresponde a la lettre donné au préalable
+
+attribué des points pour chaque bonne réponse et faire un total ce qui donnera un classement
+
+choix d'une lettre par l'host ce qui définira les futurs réponses
+
+bouton pour dire que tu as finis et qui 
+
+fonctionnalité pour affiché le nombre de bonne reponse et de mauvaise 
