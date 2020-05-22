@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Baccalaureat game train js</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Signika:wght@300;400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <h2 class="t-center">Game en cours :</h2>
+    <div class="container game">
+      <div class="d-flex">
+        <div class="rPosition">
+          <input
+            class="aPosition inputHover"
+            type="text"
+            id="prenom"
+            required
+          />
+          <label class="aPosition labelFocus" for="prenom">Prénom</label>
+        </div>
+        <div class="rPosition">
+          <input
+            class="aPosition inputHover"
+            type="text"
+            id="aliment"
+            required
+          />
+          <label class="aPosition labelFocus" for="aliment">Aliment</label>
+        </div>
+        <div class="rPosition">
+          <input class="aPosition inputHover" type="text" id="pays" required />
+          <label class="aPosition labelFocus" for="pays">Pays</label>
+        </div>
+      </div>
+      <div class="d-flex adjust1">
+        <div class="rPosition">
+          <input
+            class="aPosition inputHover"
+            type="text"
+            id="celebrite"
+            required
+          />
+          <label class="aPosition labelFocus" for="celebrite">Célébrité</label>
+        </div>
+        <div class="rPosition">
+          <input class="aPosition inputHover" type="text" id="game" required />
+          <label class="aPosition labelFocus" for="game">Jeux vidéo</label>
+        </div>
+        <div class="rPosition">
+          <input
+            class="aPosition inputHover"
+            type="text"
+            id="marque"
+            required
+          />
+          <label class="aPosition labelFocus" for="marque">Marque</label>
+        </div>
+      </div>
+    </div>
+    <div class="small-container adjust">
+      <a href="score.html">Terminer</a>
+      <a class="empty-style" href="index.html">Revenir au menu</a>
+    </div>
+    <script src="./app.js"></script>
+  </body>
+</html>

@@ -174,7 +174,7 @@ h3 {
 }
 .container {
   width: 1250px;
-  margin: 0 auto;
+  margin: 0 auto 80px auto;
 }
 .category button {
   background-color: #353232;
@@ -200,4 +200,52 @@ h3 {
 }
 .letter {
   justify-content: space-around;
+}
+.timer input {
+  width: 200px;
+  height: 70px;
+  text-align: center;
+  font-size: 24px;
+  font-weight: bold;
+  border: 2px solid black;
+}
+.game {
+  width: 830px;
+}
+.adjust {
+  width: 720px;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 200px;
+}
+.adjust1 {
+  margin-top: 100px;
+}
+.rPosition {
+  position: relative;
+}
+.aPosition {
+  position: absolute;
+  left: 0;
+}
+.inputHover:focus + .labelFocus,
+.inputHover:valid + .labelFocus {
+  font-size: 75%;
+  transform: translate3d(-20px, -225%, 0);
+  transition: all 200ms;
+  padding-left: 0;
+}
+.inputHover {
+  z-index: 1;
+  width: 210px;
+  height: 51px;
+}
+.rPosition .labelFocus {
+  transition: all 200ms;
+  z-index: 5;
+  font-size: 24px;
+  font-weight: 600;
+  left: 20px;
+  top: 13px;
+  width: 150px;
 }
