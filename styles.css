@@ -179,7 +179,6 @@ h3 {
 .category button {
   background-color: #fff;
   color: black;
-  border: 1px solid black;
   width: 150px;
   height: 60px;
   border-radius: 21px;
@@ -192,8 +191,7 @@ h3 {
   transition: 500ms;
 }
 .category button:hover {
-  background-color: black;
-  color: #fff;
+  border: 1px solid black;
 }
 .category button:nth-child(2) {
   margin-top: 0;
