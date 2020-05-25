@@ -8,17 +8,26 @@
 // déclaré les fonctions besoins :
 
 //timer
-let timer = document.querySelector("input.timer");
-let valuetimer = timer.value;
-console.log(valuetimer);
 
 //bouton
-document.addEventListener("click", categoryChoise);
-
-function grabTimer() {
-  let parentDisplay = document.querySelector("span");
-  console.log(parentDisplay);
-  //valuetimer;
+//document.addEventListener("click", categoryChoise);
+function selectionCategory() {
+  let button = document.querySelectorAll(".category-choise");
+  //console.log(button);
 }
 
+selectionCategory();
+
+function grabTimer() {
+  const parentDisplay = document.querySelector("h2 span");
+  // console.log(parentDisplay);
+  let timer = document.querySelector("input.timer");
+
+  let valueTimer = timer.value;
+  //stocker la variable dans le localstorage pour pouvoir l'utiliser sur la page d'apres
+  localStorage.setItem("keyValueTimer", valueTimer);
+  let stockageItem = localStorage.getItem("keyValueTimer");
+  //console.log(stockageItem);
+  parentDisplay.innerHTML = valueTimer;
+}
 grabTimer();
