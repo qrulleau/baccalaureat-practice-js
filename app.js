@@ -10,13 +10,25 @@
 //timer
 
 //bouton
-//document.addEventListener("click", categoryChoise);
-function selectionCategory() {
-  let button = document.querySelectorAll(".category-choise");
-  console.log(button);
-}
+// const eventButtons = document.querySelectorAll(".category-choise");
+// eventButtons.forEach((element) => {
+//   eventButtons.addEventListener("click", categoryChoise);
+// });
 
-selectionCategory();
+// function categoryChoise() {
+//   button.classList.toggle("completed");
+// }
+document.querySelectorAll(".category-choise").forEach((item) => {
+  item.addEventListener("click", (event) => {
+    item.classList.toggle("completed");
+  });
+});
+
+document.querySelectorAll(".letter-btn").forEach((item) => {
+  item.addEventListener("click", (event) => {
+    item.classList.toggle("completed");
+  });
+});
 
 function grabTimer() {
   const parentDisplay = document.querySelector("span");

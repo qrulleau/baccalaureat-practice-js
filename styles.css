@@ -190,7 +190,10 @@ h3 {
   font-family: "Signika", sans-serif;
   transition: 500ms;
 }
-.category button:hover {
+.category button:focus {
+  border: #fff;
+}
+.category .completed {
   border: 1px solid black;
 }
 .category button:nth-child(2) {
@@ -252,4 +255,8 @@ h3 {
   left: 20px;
   top: 13px;
   width: 150px;
+}
+.letter .completed {
+  border: 2px solid black;
+  border-radius: 8px;
 }
