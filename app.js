@@ -20,22 +20,17 @@ document.querySelectorAll(".letter-btn").forEach((item) => {
 });
 
 function traitementCategoryChoise(item) {
-  //console.log(item);
   if (item.classList.contains("completed")) {
-    //console.log(item.innerHTML);
-    const prenomCategoryDisplay = document.querySelectorAll(".rPosition");
-    let stockageItem = localStorage.getItem("prenomCategory");
-    //console.log(stockageItem);
+    let stockageItem = localStorage.getItem(item.innerHTML);
 
     if (stockageItem === null) {
       localStorage.setItem(item.innerHTML, item.innerHTML);
+    } else {
+      console.log("test");
     }
-    prenomCategoryDisplay.forEach((item) => {
-      item.classList.add("category-choose");
-    });
   } else {
     localStorage.removeItem(item.innerHTML);
-    console.log("test perdu");
+    //console.log("test perdu");
   }
 }
 
@@ -49,6 +44,26 @@ function categoryChoise() {
 }
 
 categoryChoise();
+
+function displayButton() {
+  const prenomCategoryDisplay = document.querySelectorAll(".rPosition");
+  const idCategoryDisplay = document.querySelectorAll("input");
+  const test = localStorage.getItem(
+    "Aliment",
+    "Pays",
+    "Marque",
+    "Célébrité",
+    "Prénom",
+    "Animal"
+  );
+  console.log(test);
+  idCategoryDisplay.forEach((item) => {
+    if (idCategoryDisplay.value === test) {
+      item.classList.add("test");
+    }
+  });
+}
+displayButton();
 
 function grabTimer() {
   const parentDisplay = document.querySelector("span");

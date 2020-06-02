@@ -1,0 +1,52 @@
+{
+    "categories": {
+        "prénom" : {
+            "arthur",
+            "bernard",
+            "clothilde",
+            "damien",
+            "emile" ,
+            "frederic",
+            "gerard",
+            "hector"
+
+        },
+        "aliment" : {
+            "abricot",
+            "banane",
+            "celeri",
+            "datte",
+            "echalotte",
+            "fraise",
+            "grenade",
+            "huitre"
+        },
+        "pays" : {
+            "allemagne",
+            "belgique",
+            "croatie",
+            "danemark",
+            "espagne",
+            "finland",
+            "guadeloupe",
+            "haiti",
+
+        },
+        "marque" : {
+            "apple",
+            "banania",
+            "chsyrler",
+            "diesel",
+            "epson",
+            "ford",
+            "garmin",
+            "haribo",
+        },
+        "célébrité" : {
+
+        },
+        "animal" : {
+
+        }
+    }
+}
