@@ -26,7 +26,7 @@ function traitementCategoryChoise(item) {
     if (stockageItem === null) {
       localStorage.setItem(item.innerHTML, item.innerHTML);
     } else {
-      console.log("test");
+      //console.log("test");
     }
   } else {
     localStorage.removeItem(item.innerHTML);
@@ -48,18 +48,24 @@ categoryChoise();
 function displayButton() {
   const prenomCategoryDisplay = document.querySelectorAll(".rPosition");
   const idCategoryDisplay = document.querySelectorAll("input");
-  const test = localStorage.getItem(
-    "Aliment",
-    "Pays",
-    "Marque",
-    "Célébrité",
-    "Prénom",
-    "Animal"
-  );
-  console.log(test);
+
+  const Pays = localStorage.getItem("Pays");
+  const Marque = localStorage.getItem("Marque");
+  const Célébrité = localStorage.getItem("Célébrité");
+  const Prénom = localStorage.getItem("Prénom");
+  const Animal = localStorage.getItem("Animal");
+  const Aliment = localStorage.getItem("Aliment");
+
   idCategoryDisplay.forEach((item) => {
-    if (idCategoryDisplay.value === test) {
-      item.classList.add("test");
+    if (
+      item.value === Pays ||
+      Marque ||
+      Célébrité ||
+      Prénom ||
+      Animal ||
+      Aliment
+    ) {
+      item.parentElement.classList.add("buttonChoose");
     }
   });
 }

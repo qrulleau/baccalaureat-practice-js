@@ -260,3 +260,9 @@ h3 {
   border: 2px solid black;
   border-radius: 8px;
 }
+.d-flex .buttonChoose {
+  display: inline;
+}
+.d-none {
+  display: none;
+}
