@@ -7,84 +7,122 @@
 
 // déclaré les fonctions besoins :
 
-document.querySelectorAll(".category-choise").forEach((item) => {
-  item.addEventListener("click", (event) => {
-    item.classList.toggle("completed");
+const categoriesArrayKey = [];
+const startGame = document.querySelector("#start");
+const pathName = window.location.pathname;
+const page = pathName.substr(pathName.lastIndexOf("/") + 1);
+console.log(page);
+
+if (page === "game.html") {
+  const displayCategory = localStorage.getItem("categoriesArrayKey");
+  //const id = querySelector("[data-id]");
+  const container = document.querySelector(".container");
+
+  displayCategory.split(",").forEach((item) => {
+    //console.log(item);
+    let fatherCreateInput = document.createElement("div");
+    fatherCreateInput.classList.add("rPosition");
+    container.appendChild(fatherCreateInput);
+
+    let createInput = document.createElement("input");
+    createInput.classList.add("aPosition", "inputHover");
+    fatherCreateInput.appendChild(createInput);
   });
-});
-
-document.querySelectorAll(".letter-btn").forEach((item) => {
-  item.addEventListener("click", (event) => {
-    item.classList.toggle("completed");
-  });
-});
-
-function traitementCategoryChoise(item) {
-  if (item.classList.contains("completed")) {
-    let stockageItem = localStorage.getItem(item.innerHTML);
-
-    if (stockageItem === null) {
-      localStorage.setItem(item.innerHTML, item.innerHTML);
-    } else {
-      //console.log("test");
-    }
-  } else {
-    localStorage.removeItem(item.innerHTML);
-    //console.log("test perdu");
-  }
+  //console.log(displayCategory)
 }
 
-function categoryChoise() {
+if (page === "setup-game.html") {
+  startGame.addEventListener("click", (e) => {
+    e.preventDefault();
+    localStorage.setItem("categoriesArrayKey", categoriesArrayKey);
+    window.location = "game.html";
+    console.log(window.location.pathname);
+    categoriesArrayKey.split("");
+  });
+
   document.querySelectorAll(".category-choise").forEach((item) => {
     item.addEventListener("click", (event) => {
-      traitementCategoryChoise(item);
-      //console.log(event);
+      item.classList.toggle("completed");
     });
   });
-}
 
-categoryChoise();
-
-function displayButton() {
-  const prenomCategoryDisplay = document.querySelectorAll(".rPosition");
-  const idCategoryDisplay = document.querySelectorAll("input");
-
-  const Pays = localStorage.getItem("Pays");
-  const Marque = localStorage.getItem("Marque");
-  const Célébrité = localStorage.getItem("Célébrité");
-  const Prénom = localStorage.getItem("Prénom");
-  const Animal = localStorage.getItem("Animal");
-  const Aliment = localStorage.getItem("Aliment");
-
-  idCategoryDisplay.forEach((item) => {
-    if (
-      item.value === Pays ||
-      Marque ||
-      Célébrité ||
-      Prénom ||
-      Animal ||
-      Aliment
-    ) {
-      item.parentElement.classList.add("buttonChoose");
-    }
+  document.querySelectorAll(".letter-btn").forEach((item) => {
+    item.addEventListener("click", (event) => {
+      item.classList.toggle("completed");
+    });
   });
-}
-displayButton();
 
-function grabTimer() {
-  const parentDisplay = document.querySelector("span");
-  //console.log(parentDisplay);
-
-  let stockageItem = localStorage.getItem("keyValueTimer");
-  if (stockageItem === null) {
-    let timer = document.querySelector("input.timer").value;
-    //stocker la variable dans le localstorage pour pouvoir l'utiliser sur la page d'apres
-    localStorage.setItem("keyValueTimer", timer);
+  function traitementCategoryChoise(item) {
+    if (item.classList.contains("completed")) {
+      const id = item.dataset.id;
+      //console.log(id);
+      let stockageItem = localStorage.getItem(item.innerHTML);
+      //console.log(stockageItem);
+      if (stockageItem === null) {
+        categoriesArrayKey.push(id);
+        console.log(categoriesArrayKey);
+        //console.log("test");
+      } else {
+        //displayButton();
+      }
+    } else {
+      //je remove mon element du tableau
+      localStorage.removeItem(item.innerHTML);
+      //console.log("test perdu");
+    }
   }
-  parentDisplay.innerHTML = " " + stockageItem;
-}
-grabTimer();
 
+  function categoryChoise() {
+    document.querySelectorAll(".category-choise").forEach((item) => {
+      item.addEventListener("click", (event) => {
+        traitementCategoryChoise(item);
+        //console.log(event);
+      });
+    });
+  }
+
+  categoryChoise();
+
+  function displayButton() {
+    const prenomCategoryDisplay = document.querySelectorAll(".rPosition");
+    const idCategoryDisplay = document.querySelectorAll("input");
+
+    const Pays = localStorage.getItem("Pays");
+    const marque = localStorage.getItem("marque");
+    const celebrite = localStorage.getItem("celebrite");
+    const prenom = localStorage.getItem("prenom");
+    const animal = localStorage.getItem("animal");
+    const aliment = localStorage.getItem("aliment");
+
+    idCategoryDisplay.forEach((item) => {
+      if (
+        item.value === Pays ||
+        marque ||
+        celebrite ||
+        prenom ||
+        animal ||
+        aliment
+      ) {
+        item.parentElement.classList.add("buttonChoose");
+      }
+    });
+  }
+  displayButton();
+
+  function grabTimer() {
+    const parentDisplay = document.querySelector("span");
+    //console.log(parentDisplay);
+
+    let stockageItem = localStorage.getItem("keyValueTimer");
+    if (stockageItem === null) {
+      let timer = document.querySelector("input.timer").value;
+      //stocker la variable dans le localstorage pour pouvoir l'utiliser sur la page d'apres
+      localStorage.setItem("keyValueTimer", timer);
+    }
+    parentDisplay.innerHTML = " " + stockageItem;
+  }
+  grabTimer();
+}
 ///
 // const startTime = 0;
 // const currentTime = 0;
