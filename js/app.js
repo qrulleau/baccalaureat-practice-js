@@ -11,22 +11,30 @@ const categoriesArrayKey = [];
 const startGame = document.querySelector("#start");
 const pathName = window.location.pathname;
 const page = pathName.substr(pathName.lastIndexOf("/") + 1);
-console.log(page);
+//console.log(page);
 
 if (page === "game.html") {
   const displayCategory = localStorage.getItem("categoriesArrayKey");
   //const id = querySelector("[data-id]");
-  const container = document.querySelector(".container");
+  const flex = document.querySelector(".d-flex");
 
   displayCategory.split(",").forEach((item) => {
-    //console.log(item);
+    console.log(item);
     let fatherCreateInput = document.createElement("div");
     fatherCreateInput.classList.add("rPosition");
-    container.appendChild(fatherCreateInput);
+    flex.appendChild(fatherCreateInput);
 
     let createInput = document.createElement("input");
     createInput.classList.add("aPosition", "inputHover");
+    createInput.setAttribute("for", item);
+    createInput.setAttribute("required", "");
     fatherCreateInput.appendChild(createInput);
+
+    let createLabel = document.createElement("label");
+    createLabel.classList.add("aPosition", "labelFocus");
+    createLabel.innerHTML = item;
+    createLabel.setAttribute("id", item);
+    fatherCreateInput.appendChild(createLabel);
   });
   //console.log(displayCategory)
 }
